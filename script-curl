@@ -1,0 +1,14 @@
+<?php
+$oCurl = curl_init();
+// mettre l'url Ã  appeler $sUrl = "https://google.com";
+curl_setopt($oCurl, CURLOPT_AUTOREFERER, TRUE);
+curl_setopt($oCurl, CURLOPT_HEADER, 0);
+curl_setopt($oCurl, CURLOPT_RETURNTRANSFER, 1);
+curl_setopt($oCurl, CURLOPT_URL, $sUrl);
+curl_setopt($oCurl, CURLOPT_FOLLOWLOCATION, TRUE);
+curl_setopt($oCurl, CURLOPT_CONNECTTIMEOUT, 60);
+$data = curl_exec($oCurl);
+print ($data);
+curl_close($oCurl);
+return $data;
+?>
